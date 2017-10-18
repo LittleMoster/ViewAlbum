@@ -1,0 +1,57 @@
+PODS:
+  - Base64 (1.1.2)
+  - CBPic2ker (1.0.1)
+  - FMDB/SQLCipher (2.7.2):
+    - SQLCipher
+  - Masonry (1.0.2)
+  - MJExtension (3.0.13)
+  - MOBFoundation (3.0.2)
+  - ReactiveObjC (3.0.0)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - ShareSDK3 (4.0.1):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 4.0.1)
+  - ShareSDK3/ShareSDK (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.1):
+    - MOBFoundation
+  - SQLCipher (3.4.1):
+    - SQLCipher/standard (= 3.4.1)
+  - SQLCipher/common (3.4.1)
+  - SQLCipher/standard (3.4.1):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - Base64
+  - CBPic2ker
+  - FMDB/SQLCipher
+  - Masonry
+  - MJExtension
+  - ReactiveObjC
+  - SDWebImage (~> 4.1.0)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+
+SPEC CHECKSUMS:
+  Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
+  CBPic2ker: 8a8522cca6f16259a46ebcec493fed3db59b05df
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
+  SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
+
+PODFILE CHECKSUM: b86433a763bad2512203678ac71f6d8e3928ec5d
+
+COCOAPODS: 1.2.0
