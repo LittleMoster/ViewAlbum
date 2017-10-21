@@ -39,8 +39,6 @@
     self.view.backgroundColor=[UIColor whiteColor];
     
     
-//    self.automaticallyAdjustsScrollViewInsets =NO;
-    
     self.title=@"爱柚";
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self GetALLphotosUsingPohotKit];
@@ -94,6 +92,9 @@
     PHFetchOptions *option = [[PHFetchOptions alloc] init];
     option.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:ascending]];
     option.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeImage];
+    PHImageRequestOptions *Imageoption = [[PHImageRequestOptions alloc] init];
+    Imageoption.resizeMode = PHImageRequestOptionsResizeModeFast;
+    
     
     // 获取所有图片对象
     PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:assetCollection options:option];
@@ -113,8 +114,7 @@
 {
 
     //跳转显示view，对图片进行编辑
-    
-    
+  
 }
 
 
@@ -127,6 +127,7 @@
     [self.mainView configWithData:self.PhotorrM];
    
     [self.view addSubview:self.mainView];
+    
 }
 
 

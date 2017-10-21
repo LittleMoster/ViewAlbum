@@ -91,22 +91,30 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Base64/Base64.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CBPic2ker/CBPic2ker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DSImageBrowse/DSImageBrowse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYCache/YYCache.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYImage/YYImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYWebImage/YYWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Base64/Base64.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CBPic2ker/CBPic2ker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/DSImageBrowse/DSImageBrowse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SQLCipher/SQLCipher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYCache/YYCache.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYImage/YYImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/YYWebImage/YYWebImage.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

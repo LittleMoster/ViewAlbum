@@ -43,6 +43,10 @@
         make.bottom.equalTo(weakSlf.mas_bottom);
         make.right.equalTo(weakSlf.mas_right);
     }];
+    
+    
+
+    
 //     UIGraphicsBeginImageContext(self.imageV.size);
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //    CGContextSaveGState(context);
@@ -62,8 +66,19 @@
 -(void)setPhotomodel:(PhotoModel *)photomodel
 {
     _photomodel=photomodel;
-    self.imageV.image=[UIImage sd_imageWithData:_photomodel.imageData];
-    
+//    self.imageV.image=[UIImage sd_imageWithData:_photomodel.imageData];
+//    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.imageV.width,self.imageV.height), NO, 0);
+//    CGContextRef con = UIGraphicsGetCurrentContext();
+//    CGContextAddEllipseInRect(con, CGRectMake(0,0,self.imageV.width,self.imageV.height));
+//    CGContextSetFillColorWithColor(con, [UIColor blueColor].CGColor);
+//    CGContextFillPath(con);
+//    UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    self.imageV.image=im;
+
+    NSLog(@"%ld",_photomodel.imageData.length);
+    self.layer.contents = (__bridge id _Nullable)([UIImage sd_imageWithData:_photomodel.imageData].CGImage);
 }
 
 -(void)drawImage:(CGContextRef) context :(CGImageRef) image :(CGRect) rect{

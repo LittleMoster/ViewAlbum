@@ -14,6 +14,8 @@
 #import "NSAuthorityManager.h"
 #import "SysAlbumModel.h"
 #import "MJExtension.h"
+#import "JQ3DAlbumVC.h"
+
 @interface SystemAlbumViewController ()<SysAlbumTableVDelegate>
 
 @property(nonatomic,strong)SysAlbumTableV *MainView;
@@ -55,6 +57,10 @@
 {
     NSLog(@"点击了cell");
     //跳转到图片列表
+    JQ3DAlbumVC *vc=[[JQ3DAlbumVC alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +70,7 @@
 -(SysAlbumTableV *)MainView
 {
     if (_MainView==nil) {
-        _MainView=[[SysAlbumTableV alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, self.view.height-64-TabbarHeight) style:UITableViewStylePlain];
+        _MainView=[[SysAlbumTableV alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, self.view.height) style:UITableViewStylePlain];
         _MainView.delegate=self;
     }
     return _MainView;
@@ -77,14 +83,14 @@
     PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     // 遍历所有的自定义相簿
     for (PHAssetCollection *assetCollection in assetCollections) {
-        [self enumerateAssetsInAssetCollection:assetCollection original:YES];
+        [self enumerateAssetsInAssetCollection:assetCollection original:NO];
     }
     
 //    // 获得相机胶卷
     PHAssetCollection *cameraRoll = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil].lastObject;
     // 遍历相机胶卷,获取大图
     _AlbumNum=assetCollections.count+1;
-    [self enumerateAssetsInAssetCollection:cameraRoll original:YES];
+    [self enumerateAssetsInAssetCollection:cameraRoll original:NO];
     
     
 }
@@ -101,10 +107,11 @@
     SysAlbumModel *albumModel=[[SysAlbumModel alloc]init];
     albumModel.name=assetCollection.localizedTitle;
   
-    /*
+    
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.resizeMode=PHImageRequestOptionsResizeModeFast;
     // 同步获得图片, 只会返回1张图片
-    options.synchronous = YES;
+    options.synchronous = NO;
     
     // 获得某个相簿中的所有PHAsset对象
     PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
@@ -115,18 +122,18 @@
         // 从asset中获得图片
         [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             NSLog(@"%@", result);
-//            [albumModel.PhotoArr addObject:result];
+            [albumModel.PhotoArr addObject:result];
             
         }];
     }
-    */
-//    if (albumModel.PhotoArr.count!=0) {
-//         albumModel.AlbumHIma=albumModel.PhotoArr.firstObject;
-//    }
-//    albumModel.Arrcount=albumModel.PhotoArr.count;
-//    
-//    [self.dataArr addObject:albumModel];
-//    
+
+    if (albumModel.PhotoArr.count!=0) {
+         albumModel.AlbumHIma=albumModel.PhotoArr.firstObject;
+    }
+    albumModel.Arrcount=albumModel.PhotoArr.count;
+    
+    [self.dataArr addObject:albumModel];
+//
 //    if (self.dataArr.count==_AlbumNum) {
 //        [self setUpMainView:self.dataArr];
 //         [NSKeyedArchiver archiveRootObject:self.dataArr toFile:SysAlbumDataPath];
@@ -134,7 +141,7 @@
 //    [NSKeyedArchiver archiveRootObject:albumModel toFile:SysAlbumDataPath];
 
     //初始化tableview
-    
+    [self setUpMainView:self.dataArr];
 }
 
 -(NSMutableArray *)dataArr
