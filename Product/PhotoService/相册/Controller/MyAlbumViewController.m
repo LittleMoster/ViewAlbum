@@ -63,6 +63,7 @@
     vc.AlbumModel=model;
     [self.navigationController pushViewController:vc animated:YES];
     
+    
     //    传图片数组
 }
 

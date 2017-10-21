@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^getDetialText)(NSString*str);
+
 @interface JQWriteAlbumDateilVC : UIViewController
+
 @property(nonatomic,copy)getDetialText getTextBlock;
 @end

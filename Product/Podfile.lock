@@ -1,6 +1,10 @@
 PODS:
   - Base64 (1.1.2)
   - CBPic2ker (1.0.1)
+  - DSImageBrowse (1.0.2):
+    - YYCache (~> 1.0.4)
+    - YYImage (~> 1.0.4)
+    - YYWebImage (~> 1.0.5)
   - FMDB/SQLCipher (2.7.2):
     - SQLCipher
   - Masonry (1.0.2)
@@ -26,10 +30,18 @@ PODS:
   - SQLCipher/common (3.4.1)
   - SQLCipher/standard (3.4.1):
     - SQLCipher/common
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - Base64
   - CBPic2ker
+  - DSImageBrowse
   - FMDB/SQLCipher
   - Masonry
   - MJExtension
@@ -39,10 +51,14 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/QQ
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
+  - YYCache
+  - YYImage
+  - YYWebImage
 
 SPEC CHECKSUMS:
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   CBPic2ker: 8a8522cca6f16259a46ebcec493fed3db59b05df
+  DSImageBrowse: 6ba9488bb693a56ebca9c48c3c15bfb9168e82f5
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -51,7 +67,10 @@ SPEC CHECKSUMS:
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
   SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: b86433a763bad2512203678ac71f6d8e3928ec5d
+PODFILE CHECKSUM: 90918e9e37a39b79b3d9f06a834e067fd7d16fea
 
 COCOAPODS: 1.2.0
