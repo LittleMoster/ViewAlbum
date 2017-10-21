@@ -104,10 +104,11 @@
     }];
     return assets;
 }
-
+//获取原图
 - (void)getOriginalImages
 {
 
+    NSLog(@"那原图");
 }
 //图片点击
 -(void)cellDidClick:(NSIndexPath *)indexPath params:(NSArray *)params
